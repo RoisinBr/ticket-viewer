@@ -1,9 +1,11 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require 'active_record'
+# require 'sinatra/flash'
 require 'pry'
 require 'httparty'
-require 'kaminari'
+
+# enable :sessions
+set :show_exceptions, false
 
 get '/' do
   erb :index
@@ -23,20 +25,19 @@ get '/ticket-list/paginate' do
   erb :list_tickets
 end
 
-
-# def no_ticket_error
-#   "No valid ticket"
-#   # erb :no_valid_ticket
-# end
-
-
 get '/ticket-info' do
   authentication = {:username => "roisin.briscoe@gmail.com", :password => ENV["zendesk_password"]}
   url = "https://roisin.zendesk.com/api/v2/tickets/#{params["id"]}.json"
-  if "#{params["id"]}".to_i < 101
-    @ticket_object = HTTParty.get(url, :basic_auth => authentication)
-    erb :view_ticket
-  else 
-    raise no_ticket_error
-  end
+  # if "#{params["id"]}".to_i < 101
+  @ticket_object = HTTParty.get(url, :basic_auth => authentication)
+  erb :view_ticket
+  # else 
+  #   flash[:notice] = "There is no valid ticket"
+  #   erb :no_valid_ticket
+  # end
+end
+
+error 500 do
+  @error = env['sinatra.error']
+  erb :error
 end
