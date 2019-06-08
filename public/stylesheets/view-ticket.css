@@ -1,0 +1,23 @@
+.single-ticket {
+    width: 900px;
+    margin: auto;
+}
+
+p {
+    padding: 10px;
+}
+
+.requester {
+    background-color: #30aabc;
+    margin-bottom: 0;
+}
+
+.subject {
+    background-color: #ccf3f9;
+    margin: 0px;
+}
+
+.description {
+    background-color: #30aabc;
+    margin-top: 0;
+}

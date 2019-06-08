@@ -1,6 +1,13 @@
-<h1>Ticket Viewer</h1>
-<a href="/ticket-list">View all tickets</a>
-<form action="/ticket-info">
-    <input type="text" name="id" placeholder="Enter Ticket Number">
-    <button>Search</button>
-</form>
+<link rel='stylesheet' href='/stylesheets/index.css'>
+
+<section>
+    <h1>Ticket Viewer</h1>
+    <p>Search for a specific ticket by enterting the ticket number or view all tickets</p>
+    <div class="container">
+        <form action="/ticket-info">
+            <input type="text" name="id" placeholder="Enter Ticket Number">
+            <button class="button-look">Find Ticket</button>
+        </form>
+        <a class="button-look" href="/ticket-list">View all tickets</a>
+    </div>
+</section>

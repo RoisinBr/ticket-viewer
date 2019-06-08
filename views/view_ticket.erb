@@ -1,7 +1,12 @@
-<h1>Ticket <%=@ticket_object["ticket"]["id"]%></h1>
+<link rel='stylesheet' href='/stylesheets/view-ticket.css'>
 
-<p>Requester: <%=@ticket_object["ticket"]["requester_id"]%></p>
-<p>Subject: <%=@ticket_object["ticket"]["subject"]%></p>
-<p>Description: <%=@ticket_object["ticket"]["description"]%></p>
+<section class="single-ticket">
+    <h1>Ticket <%=@ticket_object["ticket"]["id"]%></h1>
 
-<a href="/ticket-list">Back to all tickets</a>
+    <p class="requester">Requester: <%=@ticket_object["ticket"]["requester_id"]%></p>
+    <p class="subject">Subject: <%=@ticket_object["ticket"]["subject"]%></p>
+    <p class="description">Description: <%=@ticket_object["ticket"]["description"]%></p>
+
+    <a class="button-look" href="/">Home</a>
+    <a class="button-look" href="/ticket-list">Back to all tickets</a>
+</section>

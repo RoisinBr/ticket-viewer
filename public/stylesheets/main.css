@@ -1,10 +1,27 @@
-* 
+* {
+    box-sizing: border-box;
+}
 
-/* Home Page */
+header {
+    background-color: #12363d;
+}
 
+header img {
+    height: 100px;
+}
 
+.button-look {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    font-size: 1.15em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    background: #12363d;
+    border-radius: 27px;
+}
 
-/* List Page */
-
-
-/* View Individual Ticket Page */
+.button-look:hover {
+    opacity: 0.8;
+}

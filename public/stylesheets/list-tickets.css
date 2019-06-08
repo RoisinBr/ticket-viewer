@@ -1,0 +1,36 @@
+h1 {
+    margin-left: 15px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ticket-card {
+    border: 1px solid black;
+    width: 300px;
+    height: 100px;
+    margin: 10px;
+}
+
+.list-link {
+    text-decoration: none;
+}
+
+.list-link:hover {
+    opacity: 0.8;
+}
+
+.subject {
+    background-color:  #12363d;
+    margin: 0px;
+    height: 70px;
+    color: white;
+}
+
+.status {
+    margin: 0px;
+    height: 30px;
+    color: black
+}

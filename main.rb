@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 require 'active_record'
 require 'pry'
 require 'httparty'
-require 'kaminari'
+# require 'kaminari'
 
 get '/' do
   erb :index
@@ -18,13 +18,21 @@ end
 
 
 # GET /api/v2/tickets/{id}.json
+# def no_ticket_error
+#   "No valid ticket"
+#   # erb :no_valid_ticket
+# end
 
 
 get '/ticket-info' do
   authentication = {:username => "roisin.briscoe@gmail.com", :password => ENV["zendesk_password"]}
   url = "https://roisin.zendesk.com/api/v2/tickets/#{params["id"]}.json"
-  @ticket_object = HTTParty.get(url, :basic_auth => authentication)
-  erb :view_ticket
+  if "#{params["id"]}".to_i < 101
+    @ticket_object = HTTParty.get(url, :basic_auth => authentication)
+    erb :view_ticket
+  else 
+    raise no_ticket_error
+  end
 end
 
 # get '/ticket-list/next-page' do

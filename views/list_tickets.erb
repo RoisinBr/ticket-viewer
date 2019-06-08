@@ -1,11 +1,19 @@
-<%@tickets["tickets"].each do |ticket|%>
-  <a href="/ticket-info?id=<%=ticket["id"]%>" class="list-link">
-    <div class="ticket-card">
-      Subject: <%=ticket["subject"]%>
-      Status: <%=ticket["status"]%>
-    </div>
-  </a>
-<% end %>
+<link rel='stylesheet' href='/stylesheets/list-tickets.css'>
+
+<h1>All Tickets</h1>
+
+<div class="container">
+  <%@tickets["tickets"].each do |ticket|%>
+    <a href="/ticket-info?id=<%=ticket["id"]%>" class="list-link">
+      <div class="ticket-card">
+        <p class="subject">Subject: <%=ticket["subject"]%></p>
+        <p class="status">Status: <%=ticket["status"]%></p>
+      </div>
+    </a>
+  <% end %>
+</div>
+
+<a class="button-look" href="/">Home</a>
 <%# 
 <a href="/ticket-list/next-page?link=<%=@tickets["next_page"]">Next Page</a> %>
 
