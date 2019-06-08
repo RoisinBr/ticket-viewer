@@ -13,8 +13,22 @@
   <% end %>
 </div>
 
-<a class="button-look" href="/">Home</a>
-<%# 
-<a href="/ticket-list/next-page?link=<%=@tickets["next_page"]">Next Page</a> %>
 
+<div class="container">
+  <%if @tickets["previous_page"] %> 
+    <form action="/ticket-list/paginate">
+      <input type="hidden" name="link" value="<%=@tickets["previous_page"]%>">
+      <button class="button-look">Previous Page</button>
+    </form>
+  <% end %> 
+
+  <%if @tickets["next_page"] %> 
+    <form action="/ticket-list/paginate">
+      <input type="hidden" name="link" value="<%=@tickets["next_page"]%>">
+      <button class="button-look">Next Page</button>
+    </form>
+  <% end %> 
+
+  <a class="button-look" href="/">Home</a>
+</div>
 
