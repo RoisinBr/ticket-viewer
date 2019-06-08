@@ -1,1 +1,7 @@
-<%=@tickets%>
+<%@tickets["tickets"].each do |ticket|%>
+  <div>
+    Subject: <%=ticket["subject"]%>
+    Status: <%=ticket["type"]%>
+  </div>
+<% end %>
+
