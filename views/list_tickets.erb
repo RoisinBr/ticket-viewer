@@ -1,8 +1,10 @@
 <%@tickets["tickets"].each do |ticket|%>
-  <div>
-    Subject: <%=ticket["subject"]%>
-    Status: <%=ticket["status"]%>
-  </div>
+  <a href="/ticket-info?id=<%=ticket["id"]%>" class="list-link">
+    <div class="ticket-card">
+      Subject: <%=ticket["subject"]%>
+      Status: <%=ticket["status"]%>
+    </div>
+  </a>
 <% end %>
 <%# 
 <a href="/ticket-list/next-page?link=<%=@tickets["next_page"]">Next Page</a> %>
