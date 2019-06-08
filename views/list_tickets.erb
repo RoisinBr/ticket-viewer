@@ -1,7 +1,10 @@
 <%@tickets["tickets"].each do |ticket|%>
   <div>
     Subject: <%=ticket["subject"]%>
-    Status: <%=ticket["type"]%>
+    Status: <%=ticket["status"]%>
   </div>
 <% end %>
+<%# 
+<a href="/ticket-list/next-page?link=<%=@tickets["next_page"]">Next Page</a> %>
+
 
