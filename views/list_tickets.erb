@@ -7,7 +7,10 @@
     <a href="/ticket-info?id=<%=ticket["id"]%>" class="list-link">
       <div class="ticket-card">
         <p class="subject">Subject: <%=ticket["subject"]%></p>
-        <p class="status">Status: <%=ticket["status"]%></p>
+        <div class="container">
+          <p class="status">Status: <%=ticket["status"]%></p>
+          <p class="ticket-num align-right">Ticket no.: <%=ticket["id"]%></p>
+        </div>
       </div>
     </a>
   <% end %>
@@ -15,16 +18,16 @@
 
 
 <div class="container">
-  <div class="container navigation">
+  <div class="container">
     <%if @tickets["previous_page"] %> 
-      <form action="/ticket-list/paginate">
+      <form action="/ticket-list">
         <input type="hidden" name="link" value="<%=@tickets["previous_page"]%>">
         <button class="button-look">Previous Page</button>
       </form>
     <% end %> 
 
     <%if @tickets["next_page"] %> 
-      <form action="/ticket-list/paginate">
+      <form action="/ticket-list">
         <input type="hidden" name="link" value="<%=@tickets["next_page"]%>">
         <button class="button-look">Next Page</button>
       </form>
@@ -32,7 +35,7 @@
 
     <a class="button-look" href="/">Home</a>
   </div>
-  <div class="right-align">
+  <div class="ticket-count">
     <p>Displaying <%=@tickets["tickets"].count%> of <%=@tickets["count"]%></p>  
   </div>  
 </div>

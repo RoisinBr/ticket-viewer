@@ -32,14 +32,20 @@ h1 {
 .status {
     margin: 0px;
     height: 30px;
-    color: black
+    color: black;
+    width: 50%;
+    padding-left: 10px;
 }
 
-p {
+.ticket-num {
+    margin: 0px;
+    height: 30px;
+    color: black;
+    width: 50%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.ticket-count {
     height: 32px;
-    margin: 0;
-}
-
-.navigation {
-    width: 60%;
 }
