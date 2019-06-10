@@ -1,12 +1,12 @@
 <link rel='stylesheet' href='/stylesheets/view-ticket.css'>
 
 <section class="single-ticket">
-    <h1>Ticket <%=@ticket_object["ticket"]["id"]%></h1>
+  <h1>Ticket <%=@ticket_object["ticket"]["id"]%></h1>
 
-    <p class="requester">Requester: <%=@ticket_object["ticket"]["requester_id"]%></p>
-    <p class="subject">Subject: <%=@ticket_object["ticket"]["subject"]%></p>
-    <p class="description">Description: <%=@ticket_object["ticket"]["description"]%></p>
+  <p class="requester">Requester: <%=@ticket_object["ticket"]["requester_id"]%></p>
+  <p class="subject">Subject: <%=@ticket_object["ticket"]["subject"]%></p>
+  <p class="description">Description: <%=@ticket_object["ticket"]["description"]%></p>
 
-    <a class="button-look" href="/">Home</a>
-    <a class="button-look" href="/ticket-list?link=https://roisin.zendesk.com/api/v2/tickets.json?per_page=25">All Tickets</a>
+  <a class="button-look" href="/">Home</a>
+  <a class="button-look" href="/ticket-list?link=https://roisin.zendesk.com/api/v2/tickets.json?per_page=25">All Tickets</a>
 </section>

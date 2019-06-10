@@ -36,4 +36,4 @@ Throughout this challenge I have learnt many new skills including:
 ## Future Directions
 
 - As complexity increases css can be merged into one file to increase speed.
-- Allow uses to update/edit tickets as required.
+- Allow users to update/edit tickets as required.
