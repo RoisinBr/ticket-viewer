@@ -10,13 +10,6 @@
       <a href="/"><img src="/media/logo.png" alt=""></a>
   </header>
 
-  <% flash.keys.each do |type| %>
-  <div data-alert class="flash <%= type %> alert-box radius">
-    <%= flash[type] %>
-    <a href="#" class="close">&times;</a>
-  </div>
-<% end %>
-
   <%= yield %>
 
 </body>

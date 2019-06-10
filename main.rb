@@ -1,10 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
-# require 'sinatra/flash'
 require 'pry'
 require 'httparty'
 
-# enable :sessions
 set :show_exceptions, false
 
 get '/' do
@@ -28,16 +26,16 @@ end
 get '/ticket-info' do
   authentication = {:username => "roisin.briscoe@gmail.com", :password => ENV["zendesk_password"]}
   url = "https://roisin.zendesk.com/api/v2/tickets/#{params["id"]}.json"
-  # if "#{params["id"]}".to_i < 101
   @ticket_object = HTTParty.get(url, :basic_auth => authentication)
   erb :view_ticket
-  # else 
-  #   flash[:notice] = "There is no valid ticket"
-  #   erb :no_valid_ticket
-  # end
 end
 
 error 500 do
-  @error = env['sinatra.error']
+  @error = "Either you have entered an invalid ticket number or zendesk is currently unavailable"
+  erb :error
+end
+
+error 401 do
+  @error = "Couldn't authenticate you"
   erb :error
 end
