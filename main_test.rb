@@ -31,14 +31,24 @@ class MainTest < Test::Unit::TestCase
     assert last_response.body.include?('Status')
   end
 
+  def test_ticket_list_error_no_tickets
+    get '/ticket-info'
+    assert last_response.body.include?('Error')
+  end
+
   def test_ticket_view
     get '/ticket-info', :id => 5
     assert last_response.ok?
   end
-
+  
   def test_individual_ticket_information_displayed
     get '/ticket-info', :id => 5
     assert last_response.body.include?('Description')
+  end
+
+  def test_ticket_view_invalid_ticket_id
+    get '/ticket-info'
+    assert last_response.body.include?('Error')
   end
 
 end
