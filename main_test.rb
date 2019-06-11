@@ -50,5 +50,4 @@ class MainTest < Test::Unit::TestCase
     get '/ticket-info'
     assert last_response.body.include?('Error')
   end
-
 end
