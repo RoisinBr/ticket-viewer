@@ -16,7 +16,7 @@ If you don't have bundle installed these are the required gems, type in the comm
 
 ## Usage
 
-Open main.rb and replace ENV["zendesk_password"] (line 7) with password supplied in email submission.
+Open main.rb and replace ENV["zendesk_password"] (line 9) with password supplied in email submission.
 
 To run tests type: ruby main_test.rb
 
